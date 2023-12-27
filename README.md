@@ -51,3 +51,12 @@ To use this text-to-audio converter, follow these steps:
 
 5. Enjoy the synthesized audio and share it as needed!
 
+# Usage
+To use the text-to-audio converter, call the text_to_audio function, providing the input text and the desired output file name. The function will then generate an audio file containing the synthesized audio for the input text.
+
+# Examples
+
+| Prompt | Output |
+|--------|--------|
+| e e e e e e e g c d e f f f f f e e e e e d d e d g | Jingle Bells melody |
+| g g a g c b a a b a d c g g a g e e e c d c b b a a a b a g g a g c b a a b a d c | We Wish You A Mary Christmas |
