@@ -16,16 +16,16 @@ To use this text-to-audio converter, follow these steps:
    ```
    import numpy as np
    import soundfile as sf
-    
+   
    def text_to_audio(text, output_file):
-      notes_map = {
-         'a': 220, 'b': 246.94, 'c': 261.63, 'd': 293.66, 'e': 329.63, 'f': 349.23, 'g': 392, 'h': 440,
-          'i': 493.88, 'j': 523.25, 'k': 587.33, 'l': 659.25, 'm': 698.46, 'n': 783.99, 'o': 880,
-          'p': 987.77, 'q': 1046.5, 'r': 1174.66, 's': 1318.51, 't': 1396.91, 'u': 1567.98, 'v': 1760,
-          'w': 1975.53, 'x': 2093, 'y': 2349.32, 'z': 2637, ' ': 0
+       notes_map = {
+           'a': 220, 'b': 246.94, 'c': 261.63, 'd': 293.66, 'e': 329.63, 'f': 349.23, 'g': 392, 'h': 440,
+           'i': 493.88, 'j': 523.25, 'k': 587.33, 'l': 659.25, 'm': 698.46, 'n': 783.99, 'o': 880,
+           'p': 987.77, 'q': 1046.5, 'r': 1174.66, 's': 1318.51, 't': 1396.91, 'u': 1567.98, 'v': 1760,
+           'w': 1975.53, 'x': 2093, 'y': 2349.32, 'z': 2637, ' ': 0
            # Add more characters as needed
        }
-    
+   
        text = text.lower()
        prompt = text
    
@@ -34,15 +34,16 @@ To use this text-to-audio converter, follow these steps:
            if char in notes_map:
                freq = notes_map[char]
                duration = 1  # You can adjust the duration as needed
-              t = np.linspace(0, duration, int(44100 * duration), False)
-              note = np.sin(freq * t * 2 * np.pi)
-             audio_data = np.append(audio_data, note)
+               t = np.linspace(0, duration, int(44100 * duration), False)
+               note = np.sin(freq * t * 2 * np.pi)
+               audio_data = np.append(audio_data, note)
    
-     sf.write(output_file, audio_data, 44100, 'PCM_24')
-    
-    text = "example text to convert to audio"
-    output_file = "output_audio.wav"
-    text_to_audio(text, output_file)
+       sf.write(output_file, audio_data, 44100, 'PCM_24')
+   
+   text = "example text to convert to audio"
+   output_file = "output_audio.wav"
+   text_to_audio(text, output_file)
+
    ```
 
 3. Adjust the text variable to contain the desired input text.
