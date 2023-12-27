@@ -9,11 +9,11 @@ Made by KVI Kontent
 To use this text-to-audio converter, follow these steps:
 
 1. Install the required dependencies:
-   ```
+   ```Bash
    pip install numpy soundfile
    ```
 2. Copy the following code into your Python project or create a new Python file with this content:
-   ```
+   ```Python
    import numpy as np
    import soundfile as sf
    
